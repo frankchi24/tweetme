@@ -1,0 +1,4 @@
+greenlet==0.4.12
+lxml==3.2.4
+pytube==6.2.2
+requests==2.0.1
