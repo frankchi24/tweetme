@@ -14,7 +14,7 @@ class FormUserNeededMixin(object):
 class UserOwnMixin(FormUserNeededMixin,object):
 	def form_valid(self, form):
 		if form.instance.user == self.request.user:
-			return super(FormUserNeedeMixin, self).form_valid(form)
+			return super(UserOwnMixin, self).form_valid(form)
 		else:
 			form._errors[forms.forms.NON_FIELD_ERRORS] = ErrorList(["This user is not allowed to change this data."])
 			return self.form_invalid(form)

@@ -39,13 +39,13 @@ class TweetListView(ListView):
 class TweetUpdateView(UserOwnMixin,UpdateView):
 	queryset = Tweet.objects.all()
 	form_class = TweetModelForm
-	success_url = "/tweet/"
+	success_url = reverse_lazy('tweet:list')
 	template_name = 'tweets/update_view.html'
 
 class TweetDeleteView(LoginRequiredMixin, DeleteView):
 	model = Tweet
 	template_name = 'tweets/delete_confirm.html'
-	success_url = reverse_lazy('list')
+	success_url = reverse_lazy('tweet:list')
 
 
 
